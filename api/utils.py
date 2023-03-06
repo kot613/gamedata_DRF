@@ -1,3 +1,4 @@
+from django_filters import rest_framework as filters
 from .models import Game
 
 
@@ -19,6 +20,18 @@ def get_genres_count(Model):
         count = Game.objects.filter(genre=name).count()
         answer.append({'genre': name, 'count': count})
     return answer
+
+
+class GamesFilter(filters.FilterSet):
+    genre = filters.CharFilter(field_name='genre', lookup_expr='iexact')
+    platform = filters.CharFilter(field_name='platform', lookup_expr='iexact')
+    year = filters.RangeFilter()
+
+    class Meta:
+        model = Game
+        fields = ['genre', 'year', 'platform']
+
+
 
 
 
