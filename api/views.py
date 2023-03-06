@@ -10,7 +10,7 @@ from .utils import get_platforms_count, get_genres_count, GamesFilter
 
 class GlobalSalesUpdateView(generics.RetrieveUpdateAPIView):
     """
-    Create a view to update the global_sale variable.
+    View to update the global_sale variable.
     Permissions - Authenticated, ReadOnly
     """
     queryset = Game.objects.all()
@@ -20,7 +20,7 @@ class GlobalSalesUpdateView(generics.RetrieveUpdateAPIView):
 
 class GameViewSet(viewsets.ModelViewSet):
     """
-    Creating a ViewSet to display data.
+    ViewSet to display data.
     Permissions - AdminUser
     """
     queryset = Game.objects.all()
