@@ -8,6 +8,7 @@ router.register(r'games', GameViewSet)
 
 
 urlpatterns = [
+    path('auth-rf/', include('rest_framework.urls')),
     path('games/<int:pk>/sales/', GlobalSalesUpdateView.as_view()),
     path('', include(router.urls)),
 
