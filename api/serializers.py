@@ -19,6 +19,3 @@ class GlobalSalesUpdateSerializer(serializers.ModelSerializer):
         model = Game
         fields = '__all__'
         read_only_fields = ['name', 'platform', 'year', 'genre']
-
-
-
