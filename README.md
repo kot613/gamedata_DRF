@@ -159,5 +159,21 @@ Allowed methods: GET, PUT, PATCH, HEAD, OPTIONS
 
 
 ## Other endpoints
+1. Filtering enabled
+   + Behind the platform:    
+           `/api/v1/games/?platform=ps`
 
-Of course, in addition to the endpoints I created, there are endpoints of libraries that I use, such as [djoser](https://djoser.readthedocs.io/en/stable/) and [swagger](https://drf-yasg.readthedocs.io/en/stable/). You can get acquainted with them on their official websites with documentation.
+   + Behind the genre:    
+           `/api/v1/games/?genre=racing`
+   + By year of publication:  
+           `/api/v1/games/?year_min=1998&year_max=2020`
+   
+It is also possible to use all filters at once:
+
+`api/v1/games/?genre=racing&platform=ps&year_min=1998&year_max=2020`
+            
+
+
+Of course, in addition to the endpoints I created, there are endpoints of libraries that I use, such as  [swagger](https://drf-yasg.readthedocs.io/en/stable/). You can get acquainted with it on the official website with documentation.
+
+[Test server](https://kotes613.pythonanywhere.com/api/v1/games/)
